@@ -8,7 +8,7 @@ import {
 } from "./models/diary.js";
 const app = express();
 
-const PORT = 3002;
+// const PORT = 3002;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -39,7 +39,7 @@ app.post("/diary", async (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Express server is listening at http://localhost:${PORT}`);
   console.log("expressCfg: ", expressCfg);
 });
