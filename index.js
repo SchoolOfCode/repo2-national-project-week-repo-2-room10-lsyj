@@ -12,15 +12,15 @@ const PORT = process.env.PORT || 3002;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Access-Control-Allow-Headers"
-  );
-  next();
-});
+// app.use(function (req, res, next) {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Methods", "GET,POST");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Content-Type, Access-Control-Allow-Headers"
+//   );
+//   next();
+// });
 
 app.get("/", (req, res) => {
   res.json({
