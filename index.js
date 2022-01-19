@@ -8,7 +8,7 @@ import {
 } from "./models/diary.js";
 const app = express();
 
-const PORT = expressCfg.PORT || 3010;
+const PORT = 3002;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,5 +43,3 @@ app.listen(PORT, () => {
   console.log(`Express server is listening at http://localhost:${PORT}`);
   console.log("expressCfg: ", expressCfg);
 });
-
-export default app;
