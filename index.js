@@ -8,7 +8,7 @@ import {
 } from "./models/diary.js";
 const app = express();
 
-const PORT = process.env.PORT || 3002;
+const PORT = expressCfg.PORT || 3002;
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
