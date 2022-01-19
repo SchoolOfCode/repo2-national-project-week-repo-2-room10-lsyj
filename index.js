@@ -5,6 +5,7 @@ import { generateDate } from "./models/diary.js";
 const app = express();
 
 const PORT = expressCfg.PORT || 3010;
+console.log(process.env.TESTING);
 
 app.use(express.json());
 
@@ -28,3 +29,5 @@ app.listen(PORT, () => {
   console.log(`Express server is listening at http://localhost:${PORT}`);
   console.log("expressCfg: ", expressCfg);
 });
+
+export default app;
