@@ -26,6 +26,7 @@ export function generateDate() {
 }
 
 export async function inputNewDiaryEntry(data) {
+  const now = new Date();
   const newEntry = await query(
     `INSERT INTO mindset_diary (date, content, reflections, emotion ) VALUES ($1,$2,$3,$4) RETURNING *;`,
     [now, data.content, data.reflections, data.emotion]
