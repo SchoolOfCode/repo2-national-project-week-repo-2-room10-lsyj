@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon -r dotenv/config bin/www.js",
     "dev": "nodemon -r dotenv/config index.js",
     "createMindsetTable": "node -r dotenv/config ./database/scripts/createDiaryTable.js"
   },
@@ -21,6 +20,7 @@
   },
   "homepage": "https://github.com/SchoolOfCode/repo2-national-project-week-repo-2-room10-lsyj#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.2",
     "pg": "^8.7.1"
   },

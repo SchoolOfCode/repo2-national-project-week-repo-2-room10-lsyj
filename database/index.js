@@ -5,6 +5,7 @@ import {
   username,
   databaseName,
   password,
+  connectionString,
 } from "./../config.js";
 
 console.log(process.env.TESTING);
@@ -15,6 +16,7 @@ const pool = new pg.Pool({
   database: databaseName,
   password: password,
   port: dbPort,
+  connectionString: connectionString,
   ssl: { rejectUnauthorized: false },
 });
 

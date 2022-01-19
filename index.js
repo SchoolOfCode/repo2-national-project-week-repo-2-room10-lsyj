@@ -1,12 +1,11 @@
 import express from "express";
 import { expressCfg } from "./config.js";
-import { generateDate } from "./models/diary.js";
-
+import cors from "cors";
+import { generateDate, inputNewDiaryEntry } from "./models/diary.js";
 const app = express();
 
 const PORT = expressCfg.PORT || 3010;
-console.log(process.env.TESTING);
-
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -16,12 +15,14 @@ app.get("/", (req, res) => {
   });
 });
 
-app.post("/diary", (req, res) => {
+app.post("/diary", async (req, res) => {
   //expecting req.query http://localhost:3011/diary?content=text&reflection=text&emotion=int
   //responding with reformatted request for now
+  const newDiaryEntry = await inputNewDiaryEntry(req.query);
+
   res.json({
     success: true,
-    payload: { ...req.query, date: generateDate() },
+    payload: newDiaryEntry,
   });
 });
 

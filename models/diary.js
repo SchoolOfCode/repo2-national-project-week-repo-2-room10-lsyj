@@ -1,3 +1,5 @@
+import query from "../database/index.js";
+
 export function generateDate() {
   const today = new Date();
 
@@ -21,4 +23,12 @@ export function generateDate() {
   const mm = months[monthNumber]; //get month text
 
   return dd + " " + mm; //01 Jan
+}
+
+export async function inputNewDiaryEntry(data) {
+  const newEntry = await query(
+    `INSERT INTO mindset_diary (date, content, reflections, emotion ) VALUES ($1,$2,$3,$4) RETURNING *;`,
+    [now, data.content, data.reflections, data.emotion]
+  );
+  return newEntry.rows;
 }
