@@ -6,4 +6,4 @@ export const databaseHost = process.env.PGHOST;
 export const username = process.env.PGUSER;
 export const databaseName = process.env.PGDATABASE;
 export const password = process.env.PGPASSWORD;
-export const connectionString = process.env.CONNECTIONSTRING;
+export const connectionString = process.env.DATABASE_URL;
