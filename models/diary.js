@@ -25,6 +25,11 @@ export function generateDate() {
   return dd + " " + mm; //01 Jan
 }
 
+export async function getAllEntries() {
+  const data = await query(`SELECT * FROM mindset_diary;`);
+  return data.rows;
+}
+
 export async function inputNewDiaryEntry(data) {
   const now = new Date();
   const newEntry = await query(

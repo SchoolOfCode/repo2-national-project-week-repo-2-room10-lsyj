@@ -1,7 +1,11 @@
 import express from "express";
 import { expressCfg } from "./config.js";
 import cors from "cors";
-import { generateDate, inputNewDiaryEntry } from "./models/diary.js";
+import {
+  generateDate,
+  getAllEntries,
+  inputNewDiaryEntry,
+} from "./models/diary.js";
 const app = express();
 
 const PORT = expressCfg.PORT || 3010;
@@ -12,6 +16,14 @@ app.get("/", (req, res) => {
   res.json({
     success: true,
     payload: "This is the default Express API route",
+  });
+});
+
+app.get("/diary", async (req, res) => {
+  const entries = await getAllEntries();
+  res.json({
+    success: true,
+    payload: entries,
   });
 });
 
