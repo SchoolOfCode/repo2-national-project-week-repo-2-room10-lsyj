@@ -31,11 +31,11 @@ app.get("/diary", async (req, res) => {
 app.post("/diary", async (req, res) => {
   //expecting req.query http://localhost:3011/diary?content=text&reflection=text&emotion=int
   //responding with reformatted request for now
-  const newDiaryEntry = await inputNewDiaryEntry(req.query);
+  //const newDiaryEntry = await inputNewDiaryEntry(req.query);
 
   res.json({
     success: true,
-    payload: newDiaryEntry,
+    payload: "Teastasdasd",
   });
 });
 
