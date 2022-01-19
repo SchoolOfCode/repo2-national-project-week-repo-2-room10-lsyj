@@ -1,5 +1,5 @@
 export const expressCfg = {
-  PORT: process.env.EX_PORT,
+  PORT: process.env.PORT,
 };
 export const dbPort = process.env.PGPORT;
 export const databaseHost = process.env.PGHOST;
